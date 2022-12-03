@@ -1,0 +1,32 @@
+{
+  "name": "giveth",
+  "version": "1.0.0",
+  "description": "ETHIndia",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Advaithis19/GivETH.git"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "volunteer",
+    "dapp"
+  ],
+  "author": "Prinson x Sadvaith x Prashant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Advaithis19/GivETH/issues"
+  },
+  "homepage": "https://github.com/Advaithis19/GivETH#readme",
+  "dependencies": {
+    "@pushprotocol/restapi": "^0.2.2",
+    "cors": "^2.8.5",
+    "ethers": "^5.7.2",
+    "express": "^4.18.2"
+  }
+}
