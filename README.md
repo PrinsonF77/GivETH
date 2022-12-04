@@ -1,10 +1,9 @@
 <a name="readme-top"></a>
--->
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">GivETH</h3>
+  <h1 align="center">GivETH</h1>
 
   <p align="center">
     An awesome application that aims to benefit social mechanisms of volunteering and non-profit work
