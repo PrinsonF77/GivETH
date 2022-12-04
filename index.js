@@ -35,7 +35,7 @@ app.get("/api/resolve/address", resolveAddress, function (req, res) {
 
 app.post("/api/resolve/create", createMapping, function (req, res) {
   res.json({ data: req.data })
-=======
+  
 app.post("/api/optin", optIn, function(req, res){
     res.json({ data: req.data });
 })
