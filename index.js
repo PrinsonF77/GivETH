@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { createRequire } from "module";
 import sendNotification from "./scripts/push.js";
-import { optIn, receiveNoti } from "./scripts/receiveNotifications.js";
+import { optIn, optOut, receiveNoti } from "./scripts/receiveNotifications.js";
 
 const require = createRequire(import.meta.url);
 const app = express();
@@ -16,11 +16,15 @@ app.post("/api/push", sendNotification, function (req, res) {
   res.json({ data: req.data });
 });
 
-app.get("/api/optin", optIn, function(req, res){
+app.post("/api/optin", optIn, function(req, res){
     res.json({ data: req.data });
 })
 
-app.get("/api/receive", receiveNoti, function(req, res){
+app.post("/api/optout", optOut, function(req, res){
+    res.json({ data: req.data });
+})
+
+app.post("/api/receive", receiveNoti, function(req, res){
     res.json({ data: req.data });
 })
 
