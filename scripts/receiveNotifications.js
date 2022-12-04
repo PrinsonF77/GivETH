@@ -43,11 +43,16 @@ const optOut = async(req, res, next) => {
 const receiveNoti = async(req, res, next) => {
     const notifications = await PushAPI.user.getFeeds({
         user: `eip155:5:${req.body.wallet_address}`, // user address in CAIP
+        env: 'staging'
+      });
+
+      const spam = await PushAPI.user.getFeeds({
+        user: `eip155:5:${req.body.wallet_address}`, // user address in CAIP
         spam: true,
         env: 'staging'
       });
 
-    req.data = notifications;
+    req.data = {"notification": notifications,"spam":spam};
     next();
 }
 
