@@ -46,7 +46,6 @@ app.post("/api/optout", optOut, function(req, res){
 
 app.post("/api/receive", receiveNoti, function(req, res){
     res.json({ data: req.data });
->>>>>>> 6f1ebca13978d1dd752fcb05e0f62ea259b13012
 })
 
 app.listen(process.env.PORT || 5000, () =>
