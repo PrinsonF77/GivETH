@@ -21,6 +21,7 @@
 
 // export default { createMapping }
 import { createRequire } from "module"
+import { namehash } from "ethers/lib/utils.js"
 
 const require = createRequire(import.meta.url)
 
@@ -36,4 +37,7 @@ var name = await provider.lookupAddress(address)
 // // ethers.js automatically checks that the forward resolution matches.
 console.log(name)
 
+var tokenURI = await provider.text(namehash(name), "avatar")
+
+console.log(tokenURI)
 // // ethers.js automatically checks that the forward resolution matches.
