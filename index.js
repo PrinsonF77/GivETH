@@ -28,7 +28,7 @@ app.get("/api/resolve/name", resolveName, function (req, res) {
   res.json({ data: req.data })
 })
 
-<<<<<<< HEAD
+
 app.get("/api/resolve/address", resolveAddress, function (req, res) {
   res.json({ data: req.data })
 })
