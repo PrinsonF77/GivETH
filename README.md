@@ -4,16 +4,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="#">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">GivETH</h3>
 
   <p align="center">
     An awesome application that aims to benefit social mechanisms of volunteering and non-profit work
   </p>
-s
 
 <!-- ABOUT THE PROJECT -->
 
@@ -27,7 +22,7 @@ Here's why this is a unique opportunity:
 - Donors can donate anonymously and still have their funds make a huge difference to NGOs
 - Disintermediation! - Now it is possible for the peers to hold themselves accountable for the work they do... without needing any trusted central authorities. This means, faster settlements, lesser fees and ownership!
 
-### Built With
+## Built With
 
 - Polygon
 - Push protocol
@@ -38,9 +33,9 @@ Here's why this is a unique opportunity:
 
 <!-- Live project link -->
 
-## Link to live project
+## Link to live prototype
 
-<p align="center">(<a href="<bubble link>">Click to access Bubble app</a>)</p>
+<p align="center">(<a href="https://giveth.bubbleapps.io/version-test/">Click to access Bubble app</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
