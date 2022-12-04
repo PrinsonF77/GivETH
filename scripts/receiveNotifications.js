@@ -7,11 +7,11 @@ const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 
 
-const optIn = async() => {
+const optIn = async(req, res, next) => {
     await PushAPI.channels.subscribe({
         signer: signer,
         channelAddress: 'eip155:5:0x7Cb5523065692139eB4c34177C43d9270E9E323A', // channel address in CAIP
-        userAddress: 'eip155:5:0xaBd24466e35fDD8cA2a182D319b7d922a5760652', // user address in CAIP
+        userAddress: `eip155:5:${req.body.wallet_address}`, // user address in CAIP
         onSuccess: () => {
         console.log('opt in success');
         },
@@ -20,18 +20,36 @@ const optIn = async() => {
         },
         env: 'staging'
     })
+    next();
 }
 
-const receiveNoti = async() => {
+const optOut = async(req, res, next) => {
+    await PushAPI.channels.unsubscribe({
+        signer: signer,
+        channelAddress: 'eip155:5:0x7Cb5523065692139eB4c34177C43d9270E9E323A', // channel address in CAIP
+        userAddress: `eip155:5:${req.body.wallet_address}`, // user address in CAIP
+        onSuccess: () => {
+         console.log('opt out success');
+        },
+        onError: (e) => {
+            console.log(e);
+          console.error('opt out error');
+        },
+        env: 'staging'
+    })
+    next();
+}
+
+const receiveNoti = async(req, res, next) => {
     const notifications = await PushAPI.user.getFeeds({
-        user: 'eip155:5:0xaBd24466e35fDD8cA2a182D319b7d922a5760652', // user address in CAIP
+        user: `eip155:5:${req.body.wallet_address}`, // user address in CAIP
+        spam: true,
         env: 'staging'
       });
 
-    console.log(notifications);
+    req.data = notifications;
+    next();
 }
 
-optIn();
-receiveNoti();
 
-export { optIn, receiveNoti};
+export { optIn, optOut, receiveNoti};

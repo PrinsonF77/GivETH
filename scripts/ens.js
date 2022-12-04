@@ -20,6 +20,7 @@
 // }
 
 // export default { createMapping }
+import { namehash } from "ethers/lib/utils.js"
 import { createRequire } from "module"
 import { namehash } from "ethers/lib/utils.js"
 
@@ -36,8 +37,7 @@ var address = "0x1565d4e518a619997c1518cd2c801eFC516092C0"
 var name = await provider.lookupAddress(address)
 // // ethers.js automatically checks that the forward resolution matches.
 console.log(name)
-
-var tokenURI = await provider.text(namehash(name), "avatar")
+var tokenURI = await provider.getAvatar(name)
 
 console.log(tokenURI)
 // // ethers.js automatically checks that the forward resolution matches.

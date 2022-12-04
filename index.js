@@ -1,8 +1,8 @@
-import express from "express"
-import bodyParser from "body-parser"
-import { createRequire } from "module"
-import sendNotification from "./scripts/push.js"
-import { optIn, receiveNoti } from "./scripts/receiveNotifications.js"
+import express from "express";
+import bodyParser from "body-parser";
+import { createRequire } from "module";
+import sendNotification from "./scripts/push.js";
+import { optIn, optOut, receiveNoti } from "./scripts/receiveNotifications.js";
 
 const require = createRequire(import.meta.url)
 const app = express()
@@ -28,12 +28,25 @@ app.get("/api/resolve/name", resolveName, function (req, res) {
   res.json({ data: req.data })
 })
 
+<<<<<<< HEAD
 app.get("/api/resolve/address", resolveAddress, function (req, res) {
   res.json({ data: req.data })
 })
 
 app.post("/api/resolve/create", createMapping, function (req, res) {
   res.json({ data: req.data })
+=======
+app.post("/api/optin", optIn, function(req, res){
+    res.json({ data: req.data });
+})
+
+app.post("/api/optout", optOut, function(req, res){
+    res.json({ data: req.data });
+})
+
+app.post("/api/receive", receiveNoti, function(req, res){
+    res.json({ data: req.data });
+>>>>>>> 6f1ebca13978d1dd752fcb05e0f62ea259b13012
 })
 
 app.listen(process.env.PORT || 5000, () =>
